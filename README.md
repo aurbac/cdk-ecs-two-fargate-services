@@ -1,6 +1,6 @@
 # ECS with two Fargate services using Spot
 
-This repository contains the CDK project as a reference two deploy two services in Amazon Container Service using Fargate and Fargate Spot.
+This repository contains the CDK project as a reference to deploy two services in Amazon Container Service using Fargate and Fargate Spot.
 
 ![ECS with two Fargate services using Spot](images/diagram.png)
 
