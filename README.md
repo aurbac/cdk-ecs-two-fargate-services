@@ -1,5 +1,7 @@
 # ECS with two Fargate services using Spot
 
+This repository contains the CDK project as a reference two deploy two services in Amazon Container Service using Fargate and Fargate Spot.
+
 ![ECS with two Fargate services using Spot](images/diagram.png)
 
 ## Requirements for development environment
@@ -41,7 +43,7 @@ git config --global credential.helper '!aws codecommit credential-helper $@'
 git config --global credential.UseHttpPath true
 ```
 
-## Create the service 1 image container and push to Amazon ECR (path: /)
+## Create the image containers for each service and push to Amazon ECR
 
 Create a **demo** project only with Java 8 and "Spring Web" dependency. https://start.spring.io/
 
@@ -98,7 +100,7 @@ Build the docker image.
 docker build -t workshop-api-1 .
 ```
 
-Push the image to Amazon Elastic Container Registry.
+Push the image to Amazon Elastic Container Registry. **Before you need to have the repositories created by the CDK project.**
 
 ``` bash
 ecs-cli push workshop-api-1
@@ -147,7 +149,7 @@ artifacts:
 
 Push the project to your CodeCommit repository.
 
-Repeat the steps above the second service changing the path and name services.
+Repeat the steps above the second service changing the service path and name services.
 
 ## Update ECS cluster capacity provider to take advantage of Spot
 
